@@ -1,0 +1,988 @@
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# spark-submit --master yarn   /usr/bdp/current/spark2-client/examples/src/main/python/pi.py
+18/09/19 15:26:33 INFO SparkContext: Running Spark version 2.1.0
+18/09/19 15:26:34 INFO SecurityManager: Changing view acls to: root
+18/09/19 15:26:34 INFO SecurityManager: Changing modify acls to: root
+18/09/19 15:26:34 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:26:34 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:26:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+18/09/19 15:26:34 INFO Utils: Successfully started service 'sparkDriver' on port 23229.
+18/09/19 15:26:35 INFO SparkEnv: Registering MapOutputTracker
+18/09/19 15:26:35 INFO SparkEnv: Registering BlockManagerMaster
+18/09/19 15:26:35 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/19 15:26:35 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/19 15:26:35 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-27429f21-d339-4662-a1fb-06921911d230
+18/09/19 15:26:35 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/19 15:26:35 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/19 15:26:35 INFO log: Logging initialized @3519ms
+18/09/19 15:26:35 INFO Server: jetty-9.2.z-SNAPSHOT
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@302bc5a6{/jobs,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@68f7959e{/jobs/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@41630f03{/jobs/job,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4b1604af{/jobs/job/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@257efe9e{/stages,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@71f1c4ca{/stages/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@28b3d6e0{/stages/stage,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@537b8c25{/stages/stage/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@12302da{/stages/pool,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7e8b51a0{/stages/pool/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@48b99c47{/storage,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@472c3bd1{/storage/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5e80d43c{/storage/rdd,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7a22981d{/storage/rdd/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7e7d68ba{/environment,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@58a92617{/environment/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@50380a{/executors,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6edcba6d{/executors/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7b7127b4{/executors/threadDump,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6af92f53{/executors/threadDump/json,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6b68da6e{/static,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@606c0abc{/,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@12d2cd82{/api,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@31f2eb3c{/jobs/job/kill,null,AVAILABLE}
+18/09/19 15:26:35 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c64fcc6{/stages/stage/kill,null,AVAILABLE}
+18/09/19 15:26:35 INFO ServerConnector: Started ServerConnector@3d05c58{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:26:35 INFO Server: Started @3697ms
+18/09/19 15:26:35 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/19 15:26:35 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://10.3.2.44:4040
+18/09/19 15:26:37 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:26:37 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:26:37 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+18/09/19 15:26:37 INFO Client: Setting up container launch context for our AM
+18/09/19 15:26:37 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:26:37 INFO Client: Preparing resources for our AM container
+18/09/19 15:26:38 ERROR SparkContext: Error initializing SparkContext.
+org.apache.hadoop.security.AccessControlException: Permission denied: user=root, access=WRITE, inode="/user":hdfs:hdfs:drwxr-xr-x
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:310)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:219)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:189)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1654)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1638)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkAncestorAccess(FSDirectory.java:1597)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirMkdirOp.mkdirs(FSDirMkdirOp.java:60)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:2970)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1078)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:637)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:447)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:989)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:845)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:788)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1807)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2455)
+
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2527)
+        at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2500)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$25.doCall(DistributedFileSystem.java:1155)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$25.doCall(DistributedFileSystem.java:1152)
+        at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1152)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1144)
+        at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:1913)
+        at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:617)
+        at org.apache.spark.deploy.yarn.Client.prepareLocalResources(Client.scala:432)
+        at org.apache.spark.deploy.yarn.Client.createContainerLaunchContext(Client.scala:868)
+        at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:170)
+        at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:56)
+        at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:156)
+        at org.apache.spark.SparkContext.<init>(SparkContext.scala:509)
+        at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:236)
+        at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+        at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+        at py4j.GatewayConnection.run(GatewayConnection.java:214)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=root, access=WRITE, inode="/user":hdfs:hdfs:drwxr-xr-x
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:310)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:219)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:189)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1654)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1638)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkAncestorAccess(FSDirectory.java:1597)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirMkdirOp.mkdirs(FSDirMkdirOp.java:60)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:2970)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1078)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:637)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:447)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:989)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:845)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:788)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1807)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2455)
+
+        at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1481)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1427)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1337)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:227)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+        at com.sun.proxy.$Proxy12.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:574)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:398)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:163)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:155)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:335)
+        at com.sun.proxy.$Proxy13.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2525)
+        ... 26 more
+18/09/19 15:26:38 INFO ServerConnector: Stopped ServerConnector@3d05c58{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c64fcc6{/stages/stage/kill,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@31f2eb3c{/jobs/job/kill,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@12d2cd82{/api,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@606c0abc{/,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@6b68da6e{/static,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@6af92f53{/executors/threadDump/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7b7127b4{/executors/threadDump,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@6edcba6d{/executors/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@50380a{/executors,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@58a92617{/environment/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7e7d68ba{/environment,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7a22981d{/storage/rdd/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@5e80d43c{/storage/rdd,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@472c3bd1{/storage/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@48b99c47{/storage,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7e8b51a0{/stages/pool/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@12302da{/stages/pool,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@537b8c25{/stages/stage/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@28b3d6e0{/stages/stage,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@71f1c4ca{/stages/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@257efe9e{/stages,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@4b1604af{/jobs/job/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@41630f03{/jobs/job,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@68f7959e{/jobs/json,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@302bc5a6{/jobs,null,UNAVAILABLE}
+18/09/19 15:26:38 INFO SparkUI: Stopped Spark web UI at http://10.3.2.44:4040
+18/09/19 15:26:38 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+18/09/19 15:26:38 INFO YarnClientSchedulerBackend: Stopped
+18/09/19 15:26:38 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/19 15:26:38 INFO MemoryStore: MemoryStore cleared
+18/09/19 15:26:38 INFO BlockManager: BlockManager stopped
+18/09/19 15:26:38 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/19 15:26:38 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+18/09/19 15:26:38 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/19 15:26:38 INFO SparkContext: Successfully stopped SparkContext
+Traceback (most recent call last):
+  File "/usr/bdp/current/spark2-client/examples/src/main/python/pi.py", line 32, in <module>
+    .appName("PythonPi")\
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/sql/session.py", line 169, in getOrCreate
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/context.py", line 307, in getOrCreate
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/context.py", line 118, in __init__
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/context.py", line 179, in _do_init
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/context.py", line 246, in _initialize_context
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1401, in __call__
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip/py4j/protocol.py", line 319, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: org.apache.hadoop.security.AccessControlException: Permission denied: user=root, access=WRITE, inode="/user":hdfs:hdfs:drwxr-xr-x
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:310)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:219)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:189)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1654)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1638)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkAncestorAccess(FSDirectory.java:1597)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirMkdirOp.mkdirs(FSDirMkdirOp.java:60)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:2970)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1078)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:637)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:447)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:989)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:845)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:788)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1807)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2455)
+
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2527)
+        at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2500)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$25.doCall(DistributedFileSystem.java:1155)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$25.doCall(DistributedFileSystem.java:1152)
+        at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1152)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1144)
+        at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:1913)
+        at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:617)
+        at org.apache.spark.deploy.yarn.Client.prepareLocalResources(Client.scala:432)
+        at org.apache.spark.deploy.yarn.Client.createContainerLaunchContext(Client.scala:868)
+        at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:170)
+        at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:56)
+        at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:156)
+        at org.apache.spark.SparkContext.<init>(SparkContext.scala:509)
+        at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:236)
+        at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+        at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+        at py4j.GatewayConnection.run(GatewayConnection.java:214)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=root, access=WRITE, inode="/user":hdfs:hdfs:drwxr-xr-x
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:310)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:219)
+        at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:189)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1654)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1638)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkAncestorAccess(FSDirectory.java:1597)
+        at org.apache.hadoop.hdfs.server.namenode.FSDirMkdirOp.mkdirs(FSDirMkdirOp.java:60)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:2970)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1078)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:637)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:447)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:989)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:845)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:788)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1807)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2455)
+
+        at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1481)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1427)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1337)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:227)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+        at com.sun.proxy.$Proxy12.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:574)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:398)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:163)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:155)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:335)
+        at com.sun.proxy.$Proxy13.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2525)
+        ... 26 more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18/09/19 15:26:38 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:26:38 INFO ShutdownHookManager: Deleting directory /tmp/spark-5ea56dd0-0702-4a12-9662-0d41c803bc77
+
+
+
+
+
+
+
+
+
+
+
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# export HADOOP_USER_NAME=ccs
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# spark-submit --master yarn   /usr/bdp/current/spark2-client/examples/src/main/python/pi.py
+18/09/19 15:27:19 INFO SparkContext: Running Spark version 2.1.0
+18/09/19 15:27:19 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:27:19 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:27:19 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:27:19 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:27:19 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:27:19 INFO Utils: Successfully started service 'sparkDriver' on port 27703.
+18/09/19 15:27:20 INFO SparkEnv: Registering MapOutputTracker
+18/09/19 15:27:20 INFO SparkEnv: Registering BlockManagerMaster
+18/09/19 15:27:20 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/19 15:27:20 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/19 15:27:20 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e4f91266-eaa0-46a3-b4d8-9e7a757d28f9
+18/09/19 15:27:20 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/19 15:27:20 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/19 15:27:20 INFO log: Logging initialized @2340ms
+18/09/19 15:27:20 INFO Server: jetty-9.2.z-SNAPSHOT
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@71680cb2{/jobs,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@42f26dbf{/jobs/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@769a7c4b{/jobs/job,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6cf886fd{/jobs/job/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5d441a4c{/stages,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@c0a0bce{/stages/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@29575620{/stages/stage,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@130f299{/stages/stage/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7c5b0e89{/stages/pool,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@20532eb7{/stages/pool/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@33269acb{/storage,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3584120c{/storage/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@110f6d73{/storage/rdd,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2890df73{/storage/rdd/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2fe7f868{/environment,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3a669bea{/environment/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@50681d20{/executors,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7e2d2b19{/executors/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6e19a80c{/executors/threadDump,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@602ec7ee{/executors/threadDump/json,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@703f57d6{/static,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@67dddf2b{/,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@44a74214{/api,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@52a0ecd9{/jobs/job/kill,null,AVAILABLE}
+18/09/19 15:27:20 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@582b80bc{/stages/stage/kill,null,AVAILABLE}
+18/09/19 15:27:20 INFO ServerConnector: Started ServerConnector@29ae0c0e{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:27:20 INFO Server: Started @2492ms
+18/09/19 15:27:20 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/19 15:27:20 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://10.3.2.44:4040
+18/09/19 15:27:21 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:27:21 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:27:21 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+18/09/19 15:27:21 INFO Client: Setting up container launch context for our AM
+18/09/19 15:27:21 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:27:21 INFO Client: Preparing resources for our AM container
+18/09/19 15:27:22 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:27:25 INFO Client: Uploading resource file:/tmp/spark-8455cfaa-9af6-405a-a14b-dcc32c21ddc2/__spark_libs__915441796107000887.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13222/__spark_libs__915441796107000887.zip
+18/09/19 15:27:26 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13222/pyspark.zip
+18/09/19 15:27:26 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13222/py4j-0.10.4-src.zip
+18/09/19 15:27:26 INFO Client: Uploading resource file:/tmp/spark-8455cfaa-9af6-405a-a14b-dcc32c21ddc2/__spark_conf__6376800843138277941.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13222/__spark_conf__.zip
+18/09/19 15:27:27 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:27:27 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:27:27 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:27:27 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:27:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:27:27 INFO Client: Submitting application application_1537189095080_13222 to ResourceManager
+18/09/19 15:27:27 INFO YarnClientImpl: Submitted application application_1537189095080_13222
+18/09/19 15:27:27 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1537189095080_13222 and attemptId None
+18/09/19 15:27:28 INFO Client: Application report for application_1537189095080_13222 (state: ACCEPTED)
+18/09/19 15:27:28 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1537342047085
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13222/
+         user: ccs
+18/09/19 15:27:29 INFO Client: Application report for application_1537189095080_13222 (state: ACCEPTED)
+18/09/19 15:27:30 INFO Client: Application report for application_1537189095080_13222 (state: ACCEPTED)
+18/09/19 15:27:31 INFO Client: Application report for application_1537189095080_13222 (state: ACCEPTED)
+18/09/19 15:27:31 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(null)
+18/09/19 15:27:31 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> bxzj-test-swift0.bxzj.baixinlocal.com,bxzj-test-swift1.bxzj.baixinlocal.com, PROXY_URI_BASES -> http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13222,http://bxzj-test-swift1.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13222), /proxy/application_1537189095080_13222
+18/09/19 15:27:31 INFO JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+18/09/19 15:27:32 INFO Client: Application report for application_1537189095080_13222 (state: RUNNING)
+18/09/19 15:27:32 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.7.24
+         ApplicationMaster RPC port: 0
+         queue: default
+         start time: 1537342047085
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13222/
+         user: ccs
+18/09/19 15:27:32 INFO YarnClientSchedulerBackend: Application application_1537189095080_13222 has started running.
+18/09/19 15:27:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42487.
+18/09/19 15:27:32 INFO NettyBlockTransferService: Server created on 10.3.2.44:42487
+18/09/19 15:27:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/19 15:27:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.3.2.44, 42487, None)
+18/09/19 15:27:32 INFO BlockManagerMasterEndpoint: Registering block manager 10.3.2.44:42487 with 366.3 MB RAM, BlockManagerId(driver, 10.3.2.44, 42487, None)
+18/09/19 15:27:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.3.2.44, 42487, None)
+18/09/19 15:27:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.3.2.44, 42487, None)
+18/09/19 15:27:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@514244c{/metrics/json,null,AVAILABLE}
+18/09/19 15:27:32 INFO EventLoggingListener: Logging events to hdfs:///spark2-history/application_1537189095080_13222
+18/09/19 15:27:35 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.1.24:58425) with ID 1
+18/09/19 15:27:36 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.7.64:50298) with ID 2
+18/09/19 15:27:36 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage6.bxzj.baixinlocal.com:60644 with 366.3 MB RAM, BlockManagerId(1, bxzj-test-storage6.bxzj.baixinlocal.com, 60644, None)
+18/09/19 15:27:36 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage3.bxzj.baixinlocal.com:23288 with 366.3 MB RAM, BlockManagerId(2, bxzj-test-storage3.bxzj.baixinlocal.com, 23288, None)
+18/09/19 15:27:36 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+18/09/19 15:27:36 INFO SharedState: Warehouse path is 'file:/usr/bdp/1.0.0-1/spark2/bin/spark-warehouse'.
+18/09/19 15:27:36 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@38a3133f{/SQL,null,AVAILABLE}
+18/09/19 15:27:36 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1f5181a9{/SQL/json,null,AVAILABLE}
+18/09/19 15:27:36 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@25fb3625{/SQL/execution,null,AVAILABLE}
+18/09/19 15:27:36 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@baf1224{/SQL/execution/json,null,AVAILABLE}
+18/09/19 15:27:36 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7b9eb499{/static/sql,null,AVAILABLE}
+18/09/19 15:27:36 INFO SparkContext: Starting job: reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43
+18/09/19 15:27:36 INFO DAGScheduler: Got job 0 (reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43) with 2 output partitions
+18/09/19 15:27:36 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43)
+18/09/19 15:27:36 INFO DAGScheduler: Parents of final stage: List()
+18/09/19 15:27:36 INFO DAGScheduler: Missing parents: List()
+18/09/19 15:27:36 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43), which has no missing parents
+18/09/19 15:27:36 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 4.4 KB, free 366.3 MB)
+18/09/19 15:27:36 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.9 KB, free 366.3 MB)
+18/09/19 15:27:36 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.3.2.44:42487 (size: 2.9 KB, free: 366.3 MB)
+18/09/19 15:27:36 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:996
+18/09/19 15:27:36 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43)
+18/09/19 15:27:36 INFO YarnScheduler: Adding task set 0.0 with 2 tasks
+18/09/19 15:27:36 WARN TaskSetManager: Stage 0 contains a task of very large size (369 KB). The maximum recommended task size is 100 KB.
+18/09/19 15:27:36 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, bxzj-test-storage3.bxzj.baixinlocal.com, executor 2, partition 0, PROCESS_LOCAL, 378441 bytes)
+18/09/19 15:27:36 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1, partition 1, PROCESS_LOCAL, 506244 bytes)
+18/09/19 15:27:37 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on bxzj-test-storage3.bxzj.baixinlocal.com:23288 (size: 2.9 KB, free: 366.3 MB)
+18/09/19 15:27:37 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on bxzj-test-storage6.bxzj.baixinlocal.com:60644 (size: 2.9 KB, free: 366.3 MB)
+18/09/19 15:27:38 WARN TaskSetManager: Lost task 1.0 in stage 0.0 (TID 1, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+        at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+        at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+        at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+        at org.apache.spark.scheduler.Task.run(Task.scala:99)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+
+18/09/19 15:27:38 INFO TaskSetManager: Starting task 1.1 in stage 0.0 (TID 2, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1, partition 1, PROCESS_LOCAL, 506244 bytes)
+18/09/19 15:27:38 INFO TaskSetManager: Lost task 1.1 in stage 0.0 (TID 2) on bxzj-test-storage6.bxzj.baixinlocal.com, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+) [duplicate 1]
+18/09/19 15:27:38 INFO TaskSetManager: Starting task 1.2 in stage 0.0 (TID 3, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1, partition 1, PROCESS_LOCAL, 506244 bytes)
+18/09/19 15:27:38 INFO TaskSetManager: Lost task 1.2 in stage 0.0 (TID 3) on bxzj-test-storage6.bxzj.baixinlocal.com, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+) [duplicate 2]
+18/09/19 15:27:38 INFO TaskSetManager: Starting task 1.3 in stage 0.0 (TID 4, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1, partition 1, PROCESS_LOCAL, 506244 bytes)
+18/09/19 15:27:38 INFO TaskSetManager: Lost task 1.3 in stage 0.0 (TID 4) on bxzj-test-storage6.bxzj.baixinlocal.com, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+) [duplicate 3]
+18/09/19 15:27:38 ERROR TaskSetManager: Task 1 in stage 0.0 failed 4 times; aborting job
+18/09/19 15:27:38 INFO YarnScheduler: Cancelling stage 0
+18/09/19 15:27:38 INFO YarnScheduler: Stage 0 was cancelled
+18/09/19 15:27:38 INFO DAGScheduler: ResultStage 0 (reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43) failed in 1.339 s due to Job aborted due to stage failure: Task 1 in stage 0.0 failed 4 times, most recent failure: Lost task 1.3 in stage 0.0 (TID 4, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+        at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+        at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+        at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+        at org.apache.spark.scheduler.Task.run(Task.scala:99)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+
+Driver stacktrace:
+18/09/19 15:27:38 INFO DAGScheduler: Job 0 failed: reduce at /usr/bdp/current/spark2-client/examples/src/main/python/pi.py:43, took 1.680927 s
+Traceback (most recent call last):
+  File "/usr/bdp/current/spark2-client/examples/src/main/python/pi.py", line 43, in <module>
+    count = spark.sparkContext.parallelize(range(1, n + 1), partitions).map(f).reduce(add)
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/rdd.py", line 835, in reduce
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/rdd.py", line 809, in collect
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip/py4j/java_gateway.py", line 1133, in __call__
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip/pyspark/sql/utils.py", line 63, in deco
+  File "/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip/py4j/protocol.py", line 319, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 0.0 failed 4 times, most recent failure: Lost task 1.3 in stage 0.0 (TID 4, bxzj-test-storage6.bxzj.baixinlocal.com, executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+        at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+        at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+        at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+        at org.apache.spark.scheduler.Task.run(Task.scala:99)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+
+Driver stacktrace:
+        at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1435)
+        at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1423)
+        at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1422)
+        at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+        at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1422)
+        at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
+        at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)
+        at scala.Option.foreach(Option.scala:257)
+        at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:802)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1650)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1605)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1594)
+        at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)
+        at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:628)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:1918)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:1931)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:1944)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:1958)
+        at org.apache.spark.rdd.RDD$$anonfun$collect$1.apply(RDD.scala:935)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+        at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)
+        at org.apache.spark.rdd.RDD.collect(RDD.scala:934)
+        at org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:453)
+        at org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:280)
+        at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+        at py4j.commands.CallCommand.execute(CallCommand.java:79)
+        at py4j.GatewayConnection.run(GatewayConnection.java:214)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/data/disk5/hadoop/yarn/local/usercache/ccs/appcache/application_1537189095080_13222/container_e133_1537189095080_13222_01_000002/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 2.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+        at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+        at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+        at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+        at org.apache.spark.scheduler.Task.run(Task.scala:99)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        ... 1 more
+
+18/09/19 15:27:38 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/19 15:27:38 INFO ServerConnector: Stopped ServerConnector@29ae0c0e{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@582b80bc{/stages/stage/kill,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@52a0ecd9{/jobs/job/kill,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@44a74214{/api,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@67dddf2b{/,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@703f57d6{/static,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@602ec7ee{/executors/threadDump/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@6e19a80c{/executors/threadDump,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7e2d2b19{/executors/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@50681d20{/executors,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3a669bea{/environment/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2fe7f868{/environment,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2890df73{/storage/rdd/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@110f6d73{/storage/rdd,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3584120c{/storage/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@33269acb{/storage,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@20532eb7{/stages/pool/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7c5b0e89{/stages/pool,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@130f299{/stages/stage/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@29575620{/stages/stage,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@c0a0bce{/stages/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@5d441a4c{/stages,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@6cf886fd{/jobs/job/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@769a7c4b{/jobs/job,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@42f26dbf{/jobs/json,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@71680cb2{/jobs,null,UNAVAILABLE}
+18/09/19 15:27:38 INFO SparkUI: Stopped Spark web UI at http://10.3.2.44:4040
+18/09/19 15:27:38 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+18/09/19 15:27:38 INFO YarnClientSchedulerBackend: Shutting down all executors
+18/09/19 15:27:38 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+18/09/19 15:27:38 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+18/09/19 15:27:38 INFO YarnClientSchedulerBackend: Stopped
+18/09/19 15:27:38 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/19 15:27:38 INFO MemoryStore: MemoryStore cleared
+18/09/19 15:27:38 INFO BlockManager: BlockManager stopped
+18/09/19 15:27:38 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/19 15:27:38 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/19 15:27:38 INFO SparkContext: Successfully stopped SparkContext
+18/09/19 15:27:38 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:27:38 INFO ShutdownHookManager: Deleting directory /tmp/spark-8455cfaa-9af6-405a-a14b-dcc32c21ddc2
+18/09/19 15:27:38 INFO ShutdownHookManager: Deleting directory /tmp/spark-8455cfaa-9af6-405a-a14b-dcc32c21ddc2/pyspark-b0d56428-4a4a-4264-981c-6bf52c5f03c9
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# spark-submit --master yarn examples/src/main/python/pi.py  --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 1 --queue bdp
+python: can't open file '/usr/bdp/1.0.0-1/spark2/bin/examples/src/main/python/pi.py': [Errno 2] No such file or directory
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# pwd
+/usr/bdp/current/spark2-client/examples/src/main/python
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# spark-submit --master yarn /usr/bdp/current/spark2-client/examples/src/main/python/pi.py  --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 1 --queue bdp
+18/09/19 15:45:28 INFO SparkContext: Running Spark version 2.1.0
+18/09/19 15:45:28 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:45:28 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:45:28 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:45:28 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:45:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:45:29 INFO Utils: Successfully started service 'sparkDriver' on port 45422.
+18/09/19 15:45:29 INFO SparkEnv: Registering MapOutputTracker
+18/09/19 15:45:29 INFO SparkEnv: Registering BlockManagerMaster
+18/09/19 15:45:29 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/19 15:45:29 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/19 15:45:29 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-feb23681-621d-43f4-9378-e049be3dfd2b
+18/09/19 15:45:29 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/19 15:45:29 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/19 15:45:29 INFO log: Logging initialized @2971ms
+18/09/19 15:45:29 INFO Server: jetty-9.2.z-SNAPSHOT
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@593326b4{/jobs,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@af9e63e{/jobs/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@357b3b41{/jobs/job,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7559e422{/jobs/job/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@359f7abb{/stages,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7092a220{/stages/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c5f2e40{/stages/stage,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@261db11d{/stages/stage/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@68994dc7{/stages/pool,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@d7f6156{/stages/pool/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@68376397{/storage,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@23e9a2d5{/storage/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1bc241a{/storage/rdd,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@773f90aa{/storage/rdd/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@24c76e01{/environment,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4a568f46{/environment/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2aaafee2{/executors,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@219b91dd{/executors/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3eb34489{/executors/threadDump,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@40e1c0a6{/executors/threadDump/json,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3d416bb6{/static,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@40a900ba{/,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@641a832a{/api,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2a308bff{/jobs/job/kill,null,AVAILABLE}
+18/09/19 15:45:29 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c1a49d4{/stages/stage/kill,null,AVAILABLE}
+18/09/19 15:45:29 INFO ServerConnector: Started ServerConnector@74ebb463{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:45:29 INFO Server: Started @3121ms
+18/09/19 15:45:29 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/19 15:45:29 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://10.3.2.44:4040
+18/09/19 15:45:30 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:45:30 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:45:30 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+18/09/19 15:45:30 INFO Client: Setting up container launch context for our AM
+18/09/19 15:45:30 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:45:30 INFO Client: Preparing resources for our AM container
+18/09/19 15:45:31 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:45:34 INFO Client: Uploading resource file:/tmp/spark-08a41ed0-fcac-45c7-a388-c04fc9616188/__spark_libs__5133064857953536640.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13251/__spark_libs__5133064857953536640.zip
+18/09/19 15:45:35 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13251/pyspark.zip
+18/09/19 15:45:35 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13251/py4j-0.10.4-src.zip
+18/09/19 15:45:35 INFO Client: Uploading resource file:/tmp/spark-08a41ed0-fcac-45c7-a388-c04fc9616188/__spark_conf__6385798942592158809.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13251/__spark_conf__.zip
+18/09/19 15:45:35 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:45:35 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:45:35 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:45:35 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:45:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:45:35 INFO Client: Submitting application application_1537189095080_13251 to ResourceManager
+18/09/19 15:45:36 INFO YarnClientImpl: Submitted application application_1537189095080_13251
+18/09/19 15:45:36 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1537189095080_13251 and attemptId None
+18/09/19 15:45:37 INFO Client: Application report for application_1537189095080_13251 (state: ACCEPTED)
+18/09/19 15:45:37 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1537343135959
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13251/
+         user: ccs
+18/09/19 15:45:38 INFO Client: Application report for application_1537189095080_13251 (state: ACCEPTED)
+18/09/19 15:45:39 INFO Client: Application report for application_1537189095080_13251 (state: ACCEPTED)
+18/09/19 15:45:40 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(null)
+18/09/19 15:45:40 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> bxzj-test-swift0.bxzj.baixinlocal.com,bxzj-test-swift1.bxzj.baixinlocal.com, PROXY_URI_BASES -> http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13251,http://bxzj-test-swift1.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13251), /proxy/application_1537189095080_13251
+18/09/19 15:45:40 INFO JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+18/09/19 15:45:40 INFO Client: Application report for application_1537189095080_13251 (state: ACCEPTED)
+18/09/19 15:45:41 INFO Client: Application report for application_1537189095080_13251 (state: RUNNING)
+18/09/19 15:45:41 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.2.24
+         ApplicationMaster RPC port: 0
+         queue: default
+         start time: 1537343135959
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13251/
+         user: ccs
+18/09/19 15:45:41 INFO YarnClientSchedulerBackend: Application application_1537189095080_13251 has started running.
+18/09/19 15:45:41 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 10506.
+18/09/19 15:45:41 INFO NettyBlockTransferService: Server created on 10.3.2.44:10506
+18/09/19 15:45:41 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/19 15:45:41 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.3.2.44, 10506, None)
+18/09/19 15:45:41 INFO BlockManagerMasterEndpoint: Registering block manager 10.3.2.44:10506 with 366.3 MB RAM, BlockManagerId(driver, 10.3.2.44, 10506, None)
+18/09/19 15:45:41 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.3.2.44, 10506, None)
+18/09/19 15:45:41 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.3.2.44, 10506, None)
+18/09/19 15:45:41 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1ea2696a{/metrics/json,null,AVAILABLE}
+18/09/19 15:45:41 INFO EventLoggingListener: Logging events to hdfs:///spark2-history/application_1537189095080_13251
+18/09/19 15:45:44 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.1.24:41227) with ID 1
+18/09/19 15:45:44 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage6.bxzj.baixinlocal.com:12527 with 366.3 MB RAM, BlockManagerId(1, bxzj-test-storage6.bxzj.baixinlocal.com, 12527, None)
+18/09/19 15:45:44 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.7.44:55913) with ID 2
+18/09/19 15:45:44 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage2.bxzj.baixinlocal.com:30044 with 366.3 MB RAM, BlockManagerId(2, bxzj-test-storage2.bxzj.baixinlocal.com, 30044, None)
+18/09/19 15:45:44 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+18/09/19 15:45:45 INFO SharedState: Warehouse path is 'file:/usr/bdp/1.0.0-1/spark2/bin/spark-warehouse/'.
+18/09/19 15:45:45 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2a74c2d6{/SQL,null,AVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7a40413f{/SQL/json,null,AVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@d8518cf{/SQL/execution,null,AVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6f069787{/SQL/execution/json,null,AVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@61a1de2b{/static/sql,null,AVAILABLE}
+Traceback (most recent call last):
+  File "/usr/bdp/current/spark2-client/examples/src/main/python/pi.py", line 35, in <module>
+    partitions = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+ValueError: invalid literal for int() with base 10: '--deploy-mode'
+18/09/19 15:45:45 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/19 15:45:45 INFO ServerConnector: Stopped ServerConnector@74ebb463{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c1a49d4{/stages/stage/kill,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2a308bff{/jobs/job/kill,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@641a832a{/api,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@40a900ba{/,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3d416bb6{/static,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@40e1c0a6{/executors/threadDump/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3eb34489{/executors/threadDump,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@219b91dd{/executors/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2aaafee2{/executors,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@4a568f46{/environment/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@24c76e01{/environment,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@773f90aa{/storage/rdd/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1bc241a{/storage/rdd,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@23e9a2d5{/storage/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@68376397{/storage,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@d7f6156{/stages/pool/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@68994dc7{/stages/pool,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@261db11d{/stages/stage/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c5f2e40{/stages/stage,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7092a220{/stages/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@359f7abb{/stages,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7559e422{/jobs/job/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@357b3b41{/jobs/job,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@af9e63e{/jobs/json,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@593326b4{/jobs,null,UNAVAILABLE}
+18/09/19 15:45:45 INFO SparkUI: Stopped Spark web UI at http://10.3.2.44:4040
+18/09/19 15:45:45 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+18/09/19 15:45:45 INFO YarnClientSchedulerBackend: Shutting down all executors
+18/09/19 15:45:45 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+18/09/19 15:45:45 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+18/09/19 15:45:45 INFO YarnClientSchedulerBackend: Stopped
+18/09/19 15:45:45 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/19 15:45:45 INFO MemoryStore: MemoryStore cleared
+18/09/19 15:45:45 INFO BlockManager: BlockManager stopped
+18/09/19 15:45:45 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/19 15:45:45 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/19 15:45:45 INFO SparkContext: Successfully stopped SparkContext
+18/09/19 15:45:45 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:45:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-08a41ed0-fcac-45c7-a388-c04fc9616188
+18/09/19 15:45:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-08a41ed0-fcac-45c7-a388-c04fc9616188/pyspark-336672b6-80ca-4dad-92d1-a7ebfbdd56e8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# export HADOOP_USER_NAME=ccs
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# spark-submit --master yarn /usr/bdp/current/spark2-client/examples/src/main/python/pi.py  --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 1 --queue bdp
+18/09/19 15:46:31 INFO SparkContext: Running Spark version 2.1.0
+18/09/19 15:46:32 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:46:32 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:46:32 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:46:32 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:46:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:46:32 INFO Utils: Successfully started service 'sparkDriver' on port 38527.
+18/09/19 15:46:32 INFO SparkEnv: Registering MapOutputTracker
+18/09/19 15:46:32 INFO SparkEnv: Registering BlockManagerMaster
+18/09/19 15:46:32 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/19 15:46:32 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/19 15:46:32 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2aa99d67-6415-4aa5-bb7e-646ade9f08b0
+18/09/19 15:46:32 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/19 15:46:32 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/19 15:46:32 INFO log: Logging initialized @2355ms
+18/09/19 15:46:32 INFO Server: jetty-9.2.z-SNAPSHOT
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@357b3b41{/jobs,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7559e422{/jobs/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@359f7abb{/jobs/job,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7092a220{/jobs/job/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c5f2e40{/stages,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@261db11d{/stages/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@68994dc7{/stages/stage,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@d7f6156{/stages/stage/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@68376397{/stages/pool,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@23e9a2d5{/stages/pool/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1bc241a{/storage,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@773f90aa{/storage/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@24c76e01{/storage/rdd,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4a568f46{/storage/rdd/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2aaafee2{/environment,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@219b91dd{/environment/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3eb34489{/executors,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@40e1c0a6{/executors/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3d416bb6{/executors/threadDump,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@40a900ba{/executors/threadDump/json,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@641a832a{/static,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2a308bff{/,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c1a49d4{/api,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@143e363d{/jobs/job/kill,null,AVAILABLE}
+18/09/19 15:46:32 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@240df443{/stages/stage/kill,null,AVAILABLE}
+18/09/19 15:46:32 INFO ServerConnector: Started ServerConnector@1760ef73{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:46:32 INFO Server: Started @2500ms
+18/09/19 15:46:32 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/19 15:46:32 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://10.3.2.44:4040
+18/09/19 15:46:34 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:46:34 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:46:34 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+18/09/19 15:46:34 INFO Client: Setting up container launch context for our AM
+18/09/19 15:46:34 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:46:34 INFO Client: Preparing resources for our AM container
+18/09/19 15:46:35 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:46:37 INFO Client: Uploading resource file:/tmp/spark-f0c2e066-1e75-444b-a78c-7a030842f032/__spark_libs__7891893172791293024.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13253/__spark_libs__7891893172791293024.zip
+18/09/19 15:46:38 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/pyspark.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13253/pyspark.zip
+18/09/19 15:46:38 INFO Client: Uploading resource file:/usr/bdp/1.0.0-1/spark2/python/lib/py4j-0.10.4-src.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13253/py4j-0.10.4-src.zip
+18/09/19 15:46:38 INFO Client: Uploading resource file:/tmp/spark-f0c2e066-1e75-444b-a78c-7a030842f032/__spark_conf__1944014661683914382.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13253/__spark_conf__.zip
+18/09/19 15:46:38 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:46:38 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:46:38 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:46:38 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:46:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:46:38 INFO Client: Submitting application application_1537189095080_13253 to ResourceManager
+18/09/19 15:46:38 INFO YarnClientImpl: Submitted application application_1537189095080_13253
+18/09/19 15:46:38 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1537189095080_13253 and attemptId None
+18/09/19 15:46:39 INFO Client: Application report for application_1537189095080_13253 (state: ACCEPTED)
+18/09/19 15:46:39 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1537343198751
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13253/
+         user: ccs
+18/09/19 15:46:40 INFO Client: Application report for application_1537189095080_13253 (state: ACCEPTED)
+18/09/19 15:46:41 INFO Client: Application report for application_1537189095080_13253 (state: ACCEPTED)
+18/09/19 15:46:42 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(null)
+18/09/19 15:46:42 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> bxzj-test-swift0.bxzj.baixinlocal.com,bxzj-test-swift1.bxzj.baixinlocal.com, PROXY_URI_BASES -> http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13253,http://bxzj-test-swift1.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13253), /proxy/application_1537189095080_13253
+18/09/19 15:46:42 INFO JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+18/09/19 15:46:42 INFO Client: Application report for application_1537189095080_13253 (state: ACCEPTED)
+18/09/19 15:46:43 INFO Client: Application report for application_1537189095080_13253 (state: RUNNING)
+18/09/19 15:46:43 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.7.64
+         ApplicationMaster RPC port: 0
+         queue: default
+         start time: 1537343198751
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13253/
+         user: ccs
+18/09/19 15:46:43 INFO YarnClientSchedulerBackend: Application application_1537189095080_13253 has started running.
+18/09/19 15:46:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 21179.
+18/09/19 15:46:43 INFO NettyBlockTransferService: Server created on 10.3.2.44:21179
+18/09/19 15:46:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/19 15:46:44 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.3.2.44, 21179, None)
+18/09/19 15:46:44 INFO BlockManagerMasterEndpoint: Registering block manager 10.3.2.44:21179 with 366.3 MB RAM, BlockManagerId(driver, 10.3.2.44, 21179, None)
+18/09/19 15:46:44 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.3.2.44, 21179, None)
+18/09/19 15:46:44 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.3.2.44, 21179, None)
+18/09/19 15:46:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@646f8b70{/metrics/json,null,AVAILABLE}
+18/09/19 15:46:44 INFO EventLoggingListener: Logging events to hdfs:///spark2-history/application_1537189095080_13253
+18/09/19 15:46:47 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.2.44:37620) with ID 2
+18/09/19 15:46:47 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage5.bxzj.baixinlocal.com:33494 with 366.3 MB RAM, BlockManagerId(2, bxzj-test-storage5.bxzj.baixinlocal.com, 33494, None)
+18/09/19 15:46:47 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(null) (10.3.1.44:38309) with ID 1
+18/09/19 15:46:47 INFO BlockManagerMasterEndpoint: Registering block manager bxzj-test-storage7.bxzj.baixinlocal.com:37239 with 366.3 MB RAM, BlockManagerId(1, bxzj-test-storage7.bxzj.baixinlocal.com, 37239, None)
+18/09/19 15:46:47 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+18/09/19 15:46:47 INFO SharedState: Warehouse path is 'file:/usr/bdp/1.0.0-1/spark2/bin/spark-warehouse/'.
+18/09/19 15:46:47 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7a40413f{/SQL,null,AVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@820b6f5{/SQL/json,null,AVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6f069787{/SQL/execution,null,AVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@523f695a{/SQL/execution/json,null,AVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@32942d4e{/static/sql,null,AVAILABLE}
+Traceback (most recent call last):
+  File "/usr/bdp/current/spark2-client/examples/src/main/python/pi.py", line 35, in <module>
+    partitions = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+ValueError: invalid literal for int() with base 10: '--deploy-mode'
+18/09/19 15:46:47 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/19 15:46:47 INFO ServerConnector: Stopped ServerConnector@1760ef73{HTTP/1.1}{0.0.0.0:4040}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@240df443{/stages/stage/kill,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@143e363d{/jobs/job/kill,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c1a49d4{/api,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2a308bff{/,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@641a832a{/static,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@40a900ba{/executors/threadDump/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3d416bb6{/executors/threadDump,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@40e1c0a6{/executors/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@3eb34489{/executors,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@219b91dd{/environment/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@2aaafee2{/environment,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@4a568f46{/storage/rdd/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@24c76e01{/storage/rdd,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@773f90aa{/storage/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1bc241a{/storage,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@23e9a2d5{/stages/pool/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@68376397{/stages/pool,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@d7f6156{/stages/stage/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@68994dc7{/stages/stage,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@261db11d{/stages/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@1c5f2e40{/stages,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7092a220{/jobs/job/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@359f7abb{/jobs/job,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@7559e422{/jobs/json,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO ContextHandler: Stopped o.s.j.s.ServletContextHandler@357b3b41{/jobs,null,UNAVAILABLE}
+18/09/19 15:46:47 INFO SparkUI: Stopped Spark web UI at http://10.3.2.44:4040
+18/09/19 15:46:47 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+18/09/19 15:46:47 INFO YarnClientSchedulerBackend: Shutting down all executors
+18/09/19 15:46:47 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+18/09/19 15:46:47 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+18/09/19 15:46:47 INFO YarnClientSchedulerBackend: Stopped
+18/09/19 15:46:47 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/19 15:46:47 INFO MemoryStore: MemoryStore cleared
+18/09/19 15:46:47 INFO BlockManager: BlockManager stopped
+18/09/19 15:46:47 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/19 15:46:47 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/19 15:46:47 INFO SparkContext: Successfully stopped SparkContext
+18/09/19 15:46:47 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:46:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-f0c2e066-1e75-444b-a78c-7a030842f032
+18/09/19 15:46:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-f0c2e066-1e75-444b-a78c-7a030842f032/pyspark-845c79a6-834a-4fcc-9ed7-e0fa7228ff92
+
+
+
+
+
+

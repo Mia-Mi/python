@@ -1,0 +1,181 @@
+
+
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# /usr/bdp/current/spark2-client/bin/spark-submit --class org.apache.spark.examples.SparkPi \
+>     --master yarn \
+>     --deploy-mode cluster \
+>     --driver-memory 4g \
+>     --executor-memory 2g \
+>     --executor-cores 1 \
+>     --queue bdp \
+>     /usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar \
+>     10
+18/09/19 15:53:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/19 15:53:58 WARN DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+18/09/19 15:53:58 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:53:58 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:53:58 INFO Client: Will allocate AM container, with 4505 MB memory including 409 MB overhead
+18/09/19 15:53:58 INFO Client: Setting up container launch context for our AM
+18/09/19 15:53:58 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:53:58 INFO Client: Preparing resources for our AM container
+18/09/19 15:53:59 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:54:01 INFO Client: Uploading resource file:/tmp/spark-8c906f4a-3650-4dd7-ab10-4aff5170905a/__spark_libs__3187640867359356171.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13265/__spark_libs__3187640867359356171.zip
+18/09/19 15:54:02 INFO Client: Uploading resource file:/usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13265/spark-examples_2.11-2.1.0.jar
+18/09/19 15:54:02 INFO Client: Uploading resource file:/tmp/spark-8c906f4a-3650-4dd7-ab10-4aff5170905a/__spark_conf__577731978580302583.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13265/__spark_conf__.zip
+18/09/19 15:54:02 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:54:02 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:54:02 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:54:02 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:54:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:54:02 INFO Client: Submitting application application_1537189095080_13265 to ResourceManager
+18/09/19 15:54:03 INFO Client: Deleted staging directory hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13265
+Exception in thread "main" org.apache.hadoop.yarn.exceptions.YarnException: Failed to submit application_1537189095080_13265 to YARN : org.apache.hadoop.security.AccessControlException: User ccs cannot submit applications to queue root.bdp
+        at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.submitApplication(YarnClientImpl.java:275)
+        at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:175)
+        at org.apache.spark.deploy.yarn.Client.run(Client.scala:1154)
+        at org.apache.spark.deploy.yarn.Client$.main(Client.scala:1213)
+        at org.apache.spark.deploy.yarn.Client.main(Client.scala)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:738)
+        at org.apache.spark.deploy.SparkSubmit$.doRunMain$1(SparkSubmit.scala:187)
+        at org.apache.spark.deploy.SparkSubmit$.submit(SparkSubmit.scala:212)
+        at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:126)
+        at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+18/09/19 15:54:03 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:54:03 INFO ShutdownHookManager: Deleting directory /tmp/spark-8c906f4a-3650-4dd7-ab10-4aff5170905a
+You have new mail in /var/spool/mail/root
+
+
+
+
+
+
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# /usr/bdp/current/spark2-client/bin/spark-submit --class org.apache.spark.examples.SparkPi     --master yarn     --deploy-mode cluster     --driver-memory 4g     --executor-memory 2g     --executor-cores 1     --queue ccs     /usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar     10
+18/09/19 15:55:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/19 15:55:53 WARN DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+18/09/19 15:55:53 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:55:53 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:55:53 INFO Client: Will allocate AM container, with 4505 MB memory including 409 MB overhead
+18/09/19 15:55:53 INFO Client: Setting up container launch context for our AM
+18/09/19 15:55:53 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:55:53 INFO Client: Preparing resources for our AM container
+18/09/19 15:55:55 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:55:57 INFO Client: Uploading resource file:/tmp/spark-97d365b5-562b-4425-b0f1-5460b0654a74/__spark_libs__3242555092514956191.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13266/__spark_libs__3242555092514956191.zip
+18/09/19 15:55:57 INFO Client: Uploading resource file:/usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13266/spark-examples_2.11-2.1.0.jar
+18/09/19 15:55:57 INFO Client: Uploading resource file:/tmp/spark-97d365b5-562b-4425-b0f1-5460b0654a74/__spark_conf__8624473563039958562.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13266/__spark_conf__.zip
+18/09/19 15:55:58 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:55:58 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:55:58 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:55:58 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:55:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:55:58 INFO Client: Submitting application application_1537189095080_13266 to ResourceManager
+18/09/19 15:55:58 INFO YarnClientImpl: Submitted application application_1537189095080_13266
+18/09/19 15:55:59 INFO Client: Application report for application_1537189095080_13266 (state: ACCEPTED)
+18/09/19 15:55:59 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: ccs
+         start time: 1537343758080
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13266/
+         user: ccs
+18/09/19 15:56:00 INFO Client: Application report for application_1537189095080_13266 (state: ACCEPTED)
+18/09/19 15:56:01 INFO Client: Application report for application_1537189095080_13266 (state: ACCEPTED)
+18/09/19 15:56:02 INFO Client: Application report for application_1537189095080_13266 (state: ACCEPTED)
+18/09/19 15:56:03 INFO Client: Application report for application_1537189095080_13266 (state: ACCEPTED)
+18/09/19 15:56:04 INFO Client: Application report for application_1537189095080_13266 (state: RUNNING)
+18/09/19 15:56:04 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.5.24
+         ApplicationMaster RPC port: 0
+         queue: ccs
+         start time: 1537343758080
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13266/
+         user: ccs
+18/09/19 15:56:05 INFO Client: Application report for application_1537189095080_13266 (state: RUNNING)
+18/09/19 15:56:06 INFO Client: Application report for application_1537189095080_13266 (state: RUNNING)
+18/09/19 15:56:07 INFO Client: Application report for application_1537189095080_13266 (state: RUNNING)
+18/09/19 15:56:08 INFO Client: Application report for application_1537189095080_13266 (state: RUNNING)
+18/09/19 15:56:09 INFO Client: Application report for application_1537189095080_13266 (state: FINISHED)
+18/09/19 15:56:09 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.5.24
+         ApplicationMaster RPC port: 0
+         queue: ccs
+         start time: 1537343758080
+         final status: SUCCEEDED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13266/
+         user: ccs
+18/09/19 15:56:09 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:56:09 INFO ShutdownHookManager: Deleting directory /tmp/spark-97d365b5-562b-4425-b0f1-5460b0654a74
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]# /usr/bdp/current/spark2-client/bin/spark-submit --class org.apache.spark.examples.SparkPi     --master yarn     --deploy-mode cluster     --driver-memory 4g     --executor-memory 2g     --executor-cores 1        /usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar     10
+18/09/19 15:57:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/19 15:57:30 WARN DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+18/09/19 15:57:30 INFO Client: Requesting a new application from cluster with 8 NodeManagers
+18/09/19 15:57:30 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (67584 MB per container)
+18/09/19 15:57:30 INFO Client: Will allocate AM container, with 4505 MB memory including 409 MB overhead
+18/09/19 15:57:30 INFO Client: Setting up container launch context for our AM
+18/09/19 15:57:30 INFO Client: Setting up the launch environment for our AM container
+18/09/19 15:57:30 INFO Client: Preparing resources for our AM container
+18/09/19 15:57:31 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+18/09/19 15:57:33 INFO Client: Uploading resource file:/tmp/spark-c146b7f7-6698-402a-8598-2023c4e781a1/__spark_libs__2642829671833936465.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13268/__spark_libs__2642829671833936465.zip
+18/09/19 15:57:34 INFO Client: Uploading resource file:/usr/bdp/current/spark2-client/examples/jars/spark-examples_2.11-2.1.0.jar -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13268/spark-examples_2.11-2.1.0.jar
+18/09/19 15:57:34 INFO Client: Uploading resource file:/tmp/spark-c146b7f7-6698-402a-8598-2023c4e781a1/__spark_conf__2945998750872869988.zip -> hdfs://cluster/user/ccs/.sparkStaging/application_1537189095080_13268/__spark_conf__.zip
+18/09/19 15:57:34 INFO SecurityManager: Changing view acls to: root,ccs
+18/09/19 15:57:34 INFO SecurityManager: Changing modify acls to: root,ccs
+18/09/19 15:57:34 INFO SecurityManager: Changing view acls groups to:
+18/09/19 15:57:34 INFO SecurityManager: Changing modify acls groups to:
+18/09/19 15:57:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root, ccs); groups with view permissions: Set(); users  with modify permissions: Set(root, ccs); groups with modify permissions: Set()
+18/09/19 15:57:34 INFO Client: Submitting application application_1537189095080_13268 to ResourceManager
+18/09/19 15:57:34 INFO YarnClientImpl: Submitted application application_1537189095080_13268
+18/09/19 15:57:35 INFO Client: Application report for application_1537189095080_13268 (state: ACCEPTED)
+18/09/19 15:57:35 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1537343854733
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13268/
+         user: ccs
+18/09/19 15:57:36 INFO Client: Application report for application_1537189095080_13268 (state: ACCEPTED)
+18/09/19 15:57:37 INFO Client: Application report for application_1537189095080_13268 (state: ACCEPTED)
+18/09/19 15:57:38 INFO Client: Application report for application_1537189095080_13268 (state: ACCEPTED)
+18/09/19 15:57:39 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:39 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.1.44
+         ApplicationMaster RPC port: 0
+         queue: default
+         start time: 1537343854733
+         final status: UNDEFINED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13268/
+         user: ccs
+18/09/19 15:57:40 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:41 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:42 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:43 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:44 INFO Client: Application report for application_1537189095080_13268 (state: RUNNING)
+18/09/19 15:57:45 INFO Client: Application report for application_1537189095080_13268 (state: FINISHED)
+18/09/19 15:57:45 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.3.1.44
+         ApplicationMaster RPC port: 0
+         queue: default
+         start time: 1537343854733
+         final status: SUCCEEDED
+         tracking URL: http://bxzj-test-swift0.bxzj.baixinlocal.com:8088/proxy/application_1537189095080_13268/
+         user: ccs
+18/09/19 15:57:45 INFO ShutdownHookManager: Shutdown hook called
+18/09/19 15:57:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-c146b7f7-6698-402a-8598-2023c4e781a1
+[root@bxzj-test-storage5.bxzj.baixinlocal.com python]#

@@ -1,0 +1,3 @@
+type=command
+command=sh -x sparkdemo.sh
+resource.mem=4096
