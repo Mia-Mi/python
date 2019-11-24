@@ -1,0 +1,13 @@
+dic={"赵本山":"劝说小丑","范围":"道士下山","郭德纲":"相声"}
+for item in dic:
+    print("one",item,dic[item])
+
+#a,b=1,2
+for item in dic.keys():
+    print("two",item,dic[item])
+for item in dic.values():
+
+    print("three",item)
+
+for k,v in dic.items():
+    print("four",k,v)
