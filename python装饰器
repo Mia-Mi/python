@@ -1,0 +1,21 @@
+def zhuangshiqi(fn):
+    def inner():
+        login()
+        fn()
+    return inner
+
+@zhuangshiqi
+def adduser():
+    print("add user")
+def updateuser():
+    print("update user")
+def deluser():
+    print("del user")
+def login():
+    print("login")
+
+# adduser=zhuangshiqi(adduser)
+# updateuser=zhuangshiqi(updateuser)
+# deluser=zhuangshiqi(deluser)
+adduser()
+updateuser()
